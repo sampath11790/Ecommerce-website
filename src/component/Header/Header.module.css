@@ -1,0 +1,38 @@
+.header{
+   position: fixed;
+    height: 7rem;
+    background-color: #8a2b06;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1%;
+     top: 0%;
+    height: 8%;
+    z-index: 10%;
+    width: 100%;
+
+}
+.cartbtn{
+   
+    background-color: rgb(216, 134, 11);
+}
+.btn{
+    cursor: pointer;
+    font: inherit;
+    border: none;
+    /* background-color: #b0a19b; */
+    color: white;
+    /* padding: 0.65rem 3rem; */
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    border-radius: 25px;
+    font-weight: bold;
+}
+.amt{
+    /* background-color: rgb(30, 144, 244); */
+    padding:10px;
+    height: 100%;
+    border-radius:5px
+}
