@@ -1,9 +1,11 @@
 import React,{useState} from "react";
+import { Route} from "react-router-dom";
 import Header from "./component/Header/Header";
 import ProductList from "./component/ListItem/ProductList";
 import Footer from "./component/Footer/Footer";
 import Cart from "./component/cart/Cart";
 import Card from "./UI/Card/Card";
+import AboutPage from '../src/AboutPage/AboutPage'
 import CartContextProvider from "./Context/CartContextProvider";
 
 
@@ -18,21 +20,26 @@ const productsArr = [
   
   
 function App() {
-  const [cartSate,setcartSate]=useState(false)
+  const [cartState,setcartState]=useState(false)
+ 
   const CartHandler=()=>{
    
    console.log('state Handler')
-   setcartSate(!cartSate)
+   setcartState(!cartState)
   }
   return (
     <CartContextProvider>
      
       <Header cartHandler={ CartHandler}></Header>
       
-     
+      <Route path='/About'>
+            <AboutPage></AboutPage>
+      </Route>
+      <Route path='/Store'>
      <ProductList items={productsArr}></ProductList>
+     </Route>
      <Footer></Footer>
-     {cartSate&& <Cart items={productsArr}></Cart>}
+     {cartState&& <Cart items={productsArr}></Cart>}
      
     </CartContextProvider>
   );

@@ -1,4 +1,5 @@
 import React,{useContext} from "react";
+import { NavLink } from "react-router-dom";
 import classes from './Header.module.css'
 import Button from '../../UI/Button/Button'
 import CartContext from "../../Context/CartContext";
@@ -21,8 +22,13 @@ const Header=(props)=> {
         <header className={classes.header}>
            <h3>Ecommerce website</h3>
            <h3>Home</h3>
+           <NavLink to='/Store'activeClassName={classes.active}>
            <h3>Store</h3>
+           </NavLink>
+           <NavLink to='/About' activeClassName={classes.active}>
            <h3>About</h3>
+           </NavLink>
+           
            <div className={classes.btn}>
             
            <Button onClick={cartHandler} name='Cart' className={classes.cartbtn}></Button>
