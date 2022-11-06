@@ -1,0 +1,41 @@
+.ui{
+    position: absolute;
+    top: 5%;
+    left: 60%;
+  font-family: "Times New Roman", Times, serif;
+    background-color: white;
+    padding: .5rem;
+    border-radius: 14px;
+    width: 40%;
+    z-index: 20;
+    
+}
+
+.purchbtn{
+    background-color: aquamarine;
+}
+.spantd{
+   
+    height: 7rem;
+   
+    color: rgb(10, 2, 2);
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    position: relative;
+    top: 5vh;
+    left: 8%;
+    width: 60%;
+    
+   
+
+}
+input{
+    width: 40%;
+    padding: 8px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

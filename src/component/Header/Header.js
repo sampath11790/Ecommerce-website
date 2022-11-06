@@ -1,9 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import classes from './Header.module.css'
 import Button from '../../UI/Button/Button'
 
-const Header=()=> {
+const Header=(props)=> {
+ 
   const cartHandler=()=>{
+    props.cartHandler()
    console.log("cart handler ")
   }
     return (

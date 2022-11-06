@@ -1,10 +1,12 @@
 import React from "react";
 import classes from './ProductList.module.css'
 import ProductListItem from "./ProductListItem";
+import Cart from "../cart/Cart";
 
 const ProductList=(props)=>{
     return (
         <div>
+        {/* <Cart items={productsArr}></Cart>   */}
         <ul className={classes.ul}>
         {props.items.map((item)=>
         <ProductListItem

@@ -1,7 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
 import Header from "./component/Header/Header";
 import ProductList from "./component/ListItem/ProductList";
 import Footer from "./component/Footer/Footer";
+import Cart from "./component/cart/Cart";
+import Card from "./UI/Card/Card";
 
 
 const productsArr = [
@@ -15,13 +17,23 @@ const productsArr = [
   
   
 function App() {
+  const [cartSate,setcartSate]=useState(false)
+  const CartHandler=()=>{
+   
+   console.log('state Handler')
+   setcartSate(!cartSate)
+  }
   return (
-    <div>
-      <Header></Header>
+    <Card>
+     
+      <Header cartHandler={ CartHandler}></Header>
+      
+     
      <ProductList items={productsArr}></ProductList>
      <Footer></Footer>
+     {cartSate&& <Cart items={productsArr}></Cart>}
      
-    </div>
+    </Card>
   );
 }
 
