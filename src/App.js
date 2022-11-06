@@ -4,6 +4,7 @@ import ProductList from "./component/ListItem/ProductList";
 import Footer from "./component/Footer/Footer";
 import Cart from "./component/cart/Cart";
 import Card from "./UI/Card/Card";
+import CartContextProvider from "./Context/CartContextProvider";
 
 
 const productsArr = [
@@ -24,7 +25,7 @@ function App() {
    setcartSate(!cartSate)
   }
   return (
-    <Card>
+    <CartContextProvider>
      
       <Header cartHandler={ CartHandler}></Header>
       
@@ -33,7 +34,7 @@ function App() {
      <Footer></Footer>
      {cartSate&& <Cart items={productsArr}></Cart>}
      
-    </Card>
+    </CartContextProvider>
   );
 }
 

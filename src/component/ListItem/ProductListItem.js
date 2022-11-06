@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useContext}from "react";
 import classes from './ProductListItem.module.css'
 import Button from "../../UI/Button/Button";
+import CartContext from "../../Context/CartContext";
 
 const ProductListItem=(props)=>{
+   const ctx=useContext(CartContext)
     const onclickHandler=()=>{
+        // let b={...props,quantity:1}
+        ctx.addItem({...props,quantity:1})
         console.log('item handler')
     }
 return (

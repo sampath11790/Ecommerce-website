@@ -1,10 +1,18 @@
-import React from "react";
+import React,{useContext} from "react";
 import Button from "../../UI/Button/Button";
 import CartItem from "./CartItem";
 import classes from './CartList.Module.css'
+//import CartContext from "../../Context/CartContext";
 
 
 const CartList=(props)=>{
+    // const ctx=useContext(CartContext)
+
+    // let count=0
+    // ctx.items.map((item)=>{
+    //   count=item.quantity
+    // })
+
   
     return(
         <div className={classes.container}>
@@ -14,13 +22,8 @@ const CartList=(props)=>{
         <h3>price</h3>
         <h3>Qty</h3>
          </div> 
-       {props.items.map((item)=>
-       <CartItem
-       title={item.title}
-       key={item.id}
-       id={item.id}
-       price={item.price}
-       img={item.imageUrl}/>)}
+       
+       <CartItem/>
        <h1> Total Amount</h1>
        <h1> 78</h1>
         <Button name='Purchase' className={classes.purchbtn}></Button>

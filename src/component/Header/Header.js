@@ -1,9 +1,17 @@
-import React,{useState} from "react";
+import React,{useContext} from "react";
 import classes from './Header.module.css'
 import Button from '../../UI/Button/Button'
+import CartContext from "../../Context/CartContext";
 
 const Header=(props)=> {
- 
+  const ctx=useContext(CartContext)
+
+    let count=0
+    ctx.items.map((item)=>{
+      console.log(item)
+       count+=item.quantity
+       console.log(count)
+    })
   const cartHandler=()=>{
     props.cartHandler()
    console.log("cart handler ")
@@ -18,7 +26,7 @@ const Header=(props)=> {
            <div className={classes.btn}>
             
            <Button onClick={cartHandler} name='Cart' className={classes.cartbtn}></Button>
-           <div className={classes.amt}><h2>3</h2></div>
+           <div className={classes.amt}><h2>{count}</h2></div>
            
            </div>
         </header>
