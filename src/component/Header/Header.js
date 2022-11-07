@@ -21,7 +21,10 @@ const Header=(props)=> {
       <div>
         <header className={classes.header}>
            <h3>Ecommerce website</h3>
+           <NavLink to='/Home' >
            <h3>Home</h3>
+           </NavLink>
+           
            <NavLink to='/Store'activeClassName={classes.active}>
            <h3>Store</h3>
            </NavLink>

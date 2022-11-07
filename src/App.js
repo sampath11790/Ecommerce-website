@@ -7,6 +7,7 @@ import Cart from "./component/cart/Cart";
 import Card from "./UI/Card/Card";
 import AboutPage from '../src/AboutPage/AboutPage'
 import CartContextProvider from "./Context/CartContextProvider";
+import HomePage from "./component/Home/HomePage";
 
 
 const productsArr = [
@@ -37,6 +38,10 @@ function App() {
       </Route>
       <Route path='/Store'>
      <ProductList items={productsArr}></ProductList>
+     </Route>
+     {/* <HomePage></HomePage> */}
+    <Route path='/Home' >
+      <HomePage></HomePage>
      </Route>
      <Footer></Footer>
      {cartState&& <Cart items={productsArr}></Cart>}
