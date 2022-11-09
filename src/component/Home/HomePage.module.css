@@ -1,19 +1,17 @@
-.ul{
-    
-    /* background-color: rgb(203, 176, 176); */
-    text-align: center;
-    border-radius: 10px;
-    border-color: rgb(65, 37, 4);
-    
-    box-shadow:3px sienna;
+.ul {
+  /* background-color: rgb(203, 176, 176); */
+  text-align: center;
+  border-radius: 10px;
+  border-color: rgb(65, 37, 4);
+
+  box-shadow: 3px sienna;
 }
-.container{
-   padding: 10%;
-   background-color: rgb(252, 246, 253);
-  
+.container {
+  padding: 10%;
+  background-color: rgb(252, 246, 253);
 }
-.tour{
-    font-weight: bold;
-    text-align: center;
-    font-style: italic;
+.tour {
+  font-weight: bold;
+  text-align: center;
+  font-style: italic;
 }
