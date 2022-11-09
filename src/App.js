@@ -8,6 +8,7 @@ import Card from "./UI/Card/Card";
 import AboutPage from "../src/AboutPage/AboutPage";
 import CartContextProvider from "./Context/CartContextProvider";
 import HomePage from "./component/Home/HomePage";
+import ContactUs from "./component/contact us page/ContactUs";
 
 const productsArr = [
   {
@@ -56,6 +57,9 @@ function App() {
       {/* <HomePage></HomePage> */}
       <Route path="/Home">
         <HomePage></HomePage>
+      </Route>
+      <Route path="/contactus">
+        <ContactUs></ContactUs>
       </Route>
       <Footer></Footer>
       {cartState && <Cart items={productsArr}></Cart>}

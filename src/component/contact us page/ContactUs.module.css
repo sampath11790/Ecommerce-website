@@ -1,0 +1,48 @@
+.container {
+  width: 100%;
+  height: 150%;
+  background-color: rgb(224, 231, 237);
+  bottom: 30%;
+  color: rgb(163, 51, 242);
+  padding: 6rem;
+}
+.container2 {
+  position: static;
+  width: 60%;
+  max-height: 100%;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(250, 248, 246);
+}
+.form {
+  padding: 20px;
+  flex-direction: column;
+  /* background-color: antiquewhite; */
+}
+.form input,
+form textarea {
+  display: inline-block;
+  padding: 15px 10px;
+  height: 150%;
+  width: 60%;
+  border-radius: 7px;
+  background-color: rgb(220, 212, 212);
+}
+.contactbtn {
+  background-color: rgb(153, 67, 233);
+  color: aliceblue;
+  font-weight: bold;
+  width: 60%;
+}
+textarea {
+  height: 300%;
+}
+/* img {
+  position: relative;
+  width: 50%;
+
+  bottom: 70%;
+  left: 0%;
+} */
