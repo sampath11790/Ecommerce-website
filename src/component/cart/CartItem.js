@@ -15,7 +15,7 @@ const CartItem = (props) => {
       {ctx.items.map((item) => (
         <li className={classes.li} key={item.id}>
           <div>
-            <img src={item.img} className={classes.imgs}></img>
+            <img src={item.img} className={classes.imgs} alt="dress"></img>
           </div>
           <div>
             {" "}

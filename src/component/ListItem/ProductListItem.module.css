@@ -1,7 +1,12 @@
 .li {
   background-color: rgb(200, 215, 227);
   border-radius: 7px;
+  width: 80%;
 }
 .addbtn {
   background-color: rgb(65, 60, 69);
+}
+
+.image {
+  width: 100%;
 }

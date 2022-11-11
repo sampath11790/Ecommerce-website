@@ -20,19 +20,19 @@ const Header = (props) => {
   return (
     <div>
       <header className={classes.header}>
-        <h3>Ecommerce website</h3>
+        <span>Ecommerce website</span>
         <NavLink to="/Home">
-          <h3>Home</h3>
+          <span>Home</span>
         </NavLink>
 
         <NavLink to="/Store" activeClassName={classes.active}>
-          <h3>Store</h3>
+          <span>Store</span>
         </NavLink>
         <NavLink to="/About" activeClassName={classes.active}>
-          <h3>About</h3>
+          <span>About</span>
         </NavLink>
         <NavLink to="/contactus" activeClassName={classes.active}>
-          <h3>Contact Us</h3>
+          <span>Contact Us</span>
         </NavLink>
 
         <div className={classes.btn}>

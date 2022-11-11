@@ -12,7 +12,7 @@ const ProductList = (props) => {
             key={item.id}
             id={item.id}
             price={item.price}
-            img={item.imageUrl}
+            img={item.imageUrl[0]}
           />
         ))}
       </ul>

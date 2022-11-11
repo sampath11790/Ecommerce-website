@@ -9,6 +9,7 @@ const AboutPage = () => {
         sorrows,
         <img
           src="https://cdn1.vectorstock.com/i/1000x1000/31/45/pixel-music-note-tyechnology-logo-vector-31193145.jpg"
+          alt="music"
           className={classes.images}
         ></img>
         hates no prosecutors will unfold in the enduring of which were born in

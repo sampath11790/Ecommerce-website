@@ -15,7 +15,7 @@ const CartContextProvider = (props) => {
     console.log(" am additemHandler");
     let flag = false;
     let updatedItem = items.map((each) => {
-      if (item.id == each.id) {
+      if (item.id === each.id) {
         let temp = each.quantity + 1;
         each.quantity = temp;
         flag = true;

@@ -8,6 +8,7 @@ const HomePage = () => {
   const a = ctx.HomePageItem.map((item) => {
     console.log(item);
   });
+  //console.log(a);
   return (
     <div className={classes.container}>
       <span className={classes.tour}>

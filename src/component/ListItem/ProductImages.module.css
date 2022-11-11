@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: stretch;
+  /* background-color: aliceblue; */
+  max-width: 100%;
+  border-radius: 20px;
+  width: 100%;
+  /* border: 2px solid grey; */
+}
+.thumb-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30%;
+  padding-left: 20px;
+}
+.thumb-images img {
+  width: 75%;
+  border-radius: 10px;
+  border: 2px solid grey;
+}
+.big-images {
+  margin-top: 3%;
+  display: flex;
+  justify-content: stretch;
+  padding: 6px;
+  justify-content: center;
+}
+.big-images img {
+  height: 97%;
+  width: 90%;
+  border-radius: 10px;
+}

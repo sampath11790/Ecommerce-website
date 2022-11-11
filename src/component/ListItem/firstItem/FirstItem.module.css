@@ -1,0 +1,68 @@
+.container {
+  background-color: #f3f9f8;
+  width: 100%;
+  padding: 15%;
+}
+
+.containermain {
+  display: flex;
+  background-color: rgb(5, 166, 166);
+  padding: 0.5%;
+  list-style: none;
+  width: 100%;
+  border-radius: 15px;
+}
+a {
+  color: rgb(6, 0, 0);
+  text-decoration: none;
+}
+a:hover,
+a:active,
+a.active {
+  color: #f8f8f8;
+  padding-bottom: 0.25rem;
+}
+.box1 {
+  flex: 2;
+  width: 40%;
+  /* background-color: aquamarine; */
+}
+.box2 {
+  padding: 5%;
+  border-radius: 10px;
+  width: 40%;
+  flex: 1.5;
+  background-color: rgb(255, 255, 255);
+  width: 50%;
+}
+
+button {
+  background-color: #630606;
+}
+/* .size {
+  width: 35%;
+  background-color: greenyellow;
+} */
+
+.sizeli {
+  flex-wrap: wrap;
+  background-color: rgb(255, 255, 255);
+  padding: 25px;
+}
+
+.sizeli li {
+  text-align: center;
+  width: 20%;
+  list-style: none;
+  margin: 5px;
+  padding: 15px;
+  background-color: rgb(255, 252, 252);
+  color: rgb(21, 1, 1);
+  font-weight: bold;
+  border: 1px solid grey;
+}
+
+.sizeli {
+  padding: 5px;
+  display: flex;
+}
