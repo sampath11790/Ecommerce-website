@@ -4,7 +4,7 @@ const CartContext = createContext({
   items: [],
   HomePageItem: [],
   addItem: () => {},
-  RemoveItem: () => {},
+  RemoveItem: (id) => {},
   loginToken: "",
   loginState: null,
   login: () => {},

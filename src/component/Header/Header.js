@@ -10,9 +10,9 @@ const Header = (props) => {
 
   let count = 0;
   ctx.items.map((item) => {
-    console.log(item);
+    // console.log(item);
     count += item.quantity;
-    console.log(count);
+    // console.log(count);
   });
   const cartHandler = () => {
     props.cartHandler();

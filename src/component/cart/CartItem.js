@@ -6,14 +6,14 @@ import CartContext from "../../Context/CartContext";
 const CartItem = (props) => {
   const ctx = useContext(CartContext);
 
-  const removeHandler = () => {
-    //ctx.RemoveItem()
-    console.log("remove Handler");
+  const removeHandler = (event) => {
+    ctx.RemoveItem(event.target.id);
+    //console.log("remove Handler", id.target.id);
   };
   return (
     <div>
       {ctx.items.map((item) => (
-        <li className={classes.li} key={item.id}>
+        <li className={classes.li} key={item.id} id={item.id}>
           <div>
             <img src={item.img} className={classes.imgs} alt="dress"></img>
           </div>
@@ -33,7 +33,9 @@ const CartItem = (props) => {
             <input type="text" className={classes.input}></input>
           </div>
           <Button
+            id={item.id}
             name="remove"
+            type="submit"
             onClick={removeHandler}
             className={classes.btn}
           ></Button>

@@ -40,6 +40,15 @@ const CartContextProvider = (props) => {
     localStorage.removeItem("id");
     console.log("logoutHandler");
   };
+  const RemoveItemHandler = (id) => {
+    let updatedItem = items.filter((item) => {
+      if (item.id !== Number(id)) {
+        return item;
+      }
+    });
+    setItem([...updatedItem]);
+    //console.log("RemoveItemHandler", id);
+  };
 
   // useEffect(() => {
   //   const x = localStorage.getItem("token");
@@ -52,6 +61,7 @@ const CartContextProvider = (props) => {
         items: items,
         HomePageItem: obj,
         addItem: addItemHandler,
+        RemoveItem: RemoveItemHandler,
         loginToken: userIsLoggedIn,
         loginState: userIsLoggedIn,
         login: loginHandler,
