@@ -9,8 +9,10 @@ const obj = [
   { id: 5, date: "AUG 7", location: "CONCORD", name: " CA CONCORD PAVILION" },
 ];
 const CartContextProvider = (props) => {
+  const TokenInitalstate = localStorage.getItem("token");
   const [items, setItem] = useState([]);
-
+  const [islogin, setislogin] = useState(TokenInitalstate);
+  const userIsLoggedIn = islogin;
   const addItemHandler = (item) => {
     console.log(" am additemHandler");
     let flag = false;
@@ -26,13 +28,34 @@ const CartContextProvider = (props) => {
     });
     flag ? setItem([...updatedItem]) : setItem([...items, item]);
   };
-  // console.log(items)
+  const loginHandler = (token) => {
+    setislogin(token);
+    localStorage.setItem("id", token);
+    localStorage.setItem("token", true);
+    console.log("loginhandler");
+  };
+  const logoutHandler = () => {
+    setislogin(null);
+    localStorage.removeItem("token");
+    localStorage.removeItem("id");
+    console.log("logoutHandler");
+  };
+
+  // useEffect(() => {
+  //   const x = localStorage.getItem("token");
+  //   x ? setislogin(true) : console.log(x);
+  // }, [islogin]);
+  // // console.log(items)
   return (
     <CartContext.Provider
       value={{
         items: items,
         HomePageItem: obj,
         addItem: addItemHandler,
+        loginToken: userIsLoggedIn,
+        loginState: userIsLoggedIn,
+        login: loginHandler,
+        logout: logoutHandler,
       }}
     >
       {props.children}

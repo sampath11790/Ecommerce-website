@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import classes from "./FirstItem.module.css";
 import CartContext from "../../../Context/CartContext";
@@ -14,7 +14,7 @@ const FirstItem = (props) => {
     if (Number(parms.id) === item.id) {
       list = item;
     }
-    return;
+    return list;
   });
 
   // const Images = list.imageUrl.map((item, index) => (

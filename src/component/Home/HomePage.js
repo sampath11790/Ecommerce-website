@@ -5,9 +5,9 @@ import CartContext from "../../Context/CartContext";
 
 const HomePage = () => {
   const ctx = useContext(CartContext);
-  const a = ctx.HomePageItem.map((item) => {
-    console.log(item);
-  });
+  // const a = ctx.HomePageItem.map((item) => {
+  //   console.log(item);
+  // });
   //console.log(a);
   return (
     <div className={classes.container}>

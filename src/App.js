@@ -1,16 +1,17 @@
-import React, { useState } from "react";
-import { Route } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Route, Redirect } from "react-router-dom";
 import Header from "./component/Header/Header";
 import ProductList from "./component/ListItem/ProductList";
 import Footer from "./component/Footer/Footer";
 import Cart from "./component/cart/Cart";
 // import Card from "./UI/Card/Card";
 import AboutPage from "../src/AboutPage/AboutPage";
-import CartContextProvider from "./Context/CartContextProvider";
+
 import HomePage from "./component/Home/HomePage";
 import ContactUs from "./component/contact us page/ContactUs";
 import FirstItem from "./component/ListItem/firstItem/FirstItem";
-
+import LoginPage from "./component/LoginPage/LoginPage";
+import CartContext from "./Context/CartContext";
 const productsArr = [
   {
     id: 1,
@@ -61,34 +62,49 @@ const productsArr = [
 
 function App() {
   const [cartState, setcartState] = useState(false);
+  const ctx = useContext(CartContext);
 
   const CartHandler = () => {
     console.log("state Handler");
     setcartState(!cartState);
   };
-  return (
-    <CartContextProvider>
-      <Header cartHandler={CartHandler}></Header>
 
-      <Route path="/About">
-        <AboutPage></AboutPage>
-      </Route>
-      <Route path="/Store" exact>
-        <ProductList items={productsArr}></ProductList>
-      </Route>
-      <Route path="/Store/:id" exact>
-        <FirstItem items={productsArr}></FirstItem>
-      </Route>
-      {/* <HomePage></HomePage> */}
-      <Route path="/Home">
-        <HomePage></HomePage>
-      </Route>
-      <Route path="/contactus">
-        <ContactUs></ContactUs>
-      </Route>
-      <Footer></Footer>
+  return (
+    <React.Fragment>
+      <Header cartHandler={CartHandler}></Header>
+      {/* login condition added */}
+      {!ctx.loginState ? (
+        <Route path="/login">
+          <LoginPage></LoginPage>
+        </Route>
+      ) : (
+        <div>
+          <Route path="/About">
+            <AboutPage></AboutPage>
+          </Route>
+          <Route path="/Store" exact>
+            <ProductList items={productsArr}></ProductList>
+          </Route>
+          <Route path="/Store/:id">
+            <FirstItem items={productsArr}></FirstItem>
+          </Route>
+          {/* <HomePage></HomePage> */}
+          <Route path="/Home">
+            <HomePage></HomePage>
+          </Route>
+          <Route path="/login">
+            <LoginPage></LoginPage>
+          </Route>
+          <Route path="/contactus">
+            <ContactUs></ContactUs>
+          </Route>
+        </div>
+      )}
+      {/* {Redirect path mentioned} */}
+      <Route path="*">{!ctx.loginState && <Redirect to="/login" />}</Route>
+      {ctx.loginState && <Footer></Footer>}
       {cartState && <Cart items={productsArr}></Cart>}
-    </CartContextProvider>
+    </React.Fragment>
   );
 }
 

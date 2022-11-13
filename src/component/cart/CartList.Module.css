@@ -11,7 +11,7 @@
 }
 
 .purchbtn {
-  background-color: aquamarine;
+  background-color: rgba(17, 8, 93, 0.874);
 }
 .spantd {
   height: 7rem;
@@ -33,4 +33,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+.container {
+  max-height: 100%;
 }

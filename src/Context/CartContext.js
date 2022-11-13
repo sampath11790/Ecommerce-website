@@ -5,6 +5,10 @@ const CartContext = createContext({
   HomePageItem: [],
   addItem: () => {},
   RemoveItem: () => {},
+  loginToken: "",
+  loginState: null,
+  login: () => {},
+  logout: () => {},
 });
 
 export default CartContext;

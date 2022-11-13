@@ -49,3 +49,22 @@
   color: white;
   text-decoration: none;
 }
+.logout {
+  background-color: #8a2b06;
+  color: aliceblue;
+}
+.logout:hover {
+  background-color: #8a2b06;
+}
+.logout:active {
+  background-color: #8a2b06;
+  /* box-shadow: 0 5px #666;
+  transform: translateX(4px); */
+}
+.login {
+  width: 20%;
+  font-weight: bolder;
+  text-align: center;
+  font-size: x-large;
+  border-radius: 5px;
+}
