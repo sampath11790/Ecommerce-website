@@ -55,9 +55,11 @@
 }
 .logout:hover {
   background-color: #8a2b06;
+  color: #d3a408;
 }
 .logout:active {
   background-color: #8a2b06;
+  color: #d3a408;
   /* box-shadow: 0 5px #666;
   transform: translateX(4px); */
 }

@@ -28,7 +28,7 @@ const Header = (props) => {
           </NavLink>
         )}
         {!ctx.loginState && (
-          <NavLink to="/login">
+          <NavLink to="/login" activeClassName={classes.active}>
             <span className={classes.login}>Login</span>
           </NavLink>
         )}
@@ -60,7 +60,11 @@ const Header = (props) => {
           </NavLink>
         )}
         {ctx.loginState && (
-          <LogOut name="logout" className={classes.logout}></LogOut>
+          <LogOut
+            name="logout"
+            className={classes.logout}
+            activeClassName={classes.active}
+          ></LogOut>
         )}
         {ctx.loginState && (
           <div className={classes.btn}>

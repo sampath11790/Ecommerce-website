@@ -47,6 +47,9 @@ const LoginPage = () => {
   return (
     <div className={classes["main-page"]}>
       <form className={classes["container"]} onSubmit={LoginHandler}>
+        <div className={classes["profile-img"]}>
+          <img src="https://yt3.ggpht.com/ytc/AMLnZu9UmunKtiD3L-xo9N5mNkkmdVnrdCd_KAbU0HBl=s900-c-k-c0x00ffffff-no-rj" />
+        </div>
         <h1>Welcome</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -4,6 +4,7 @@ import classes from "./FirstItem.module.css";
 import CartContext from "../../../Context/CartContext";
 import Button from "../../../UI/Button/Button";
 import ProductImage from "../ProductImage";
+import ProductReview from "../ProductReview";
 
 const FirstItem = (props) => {
   const ctx = useContext(CartContext);
@@ -24,8 +25,16 @@ const FirstItem = (props) => {
   // const bigImage = list.imageUrl[0];
   const onclickHandler = () => {
     // // let b={...props,quantity:1}
-    ctx.addItem({ ...list, quantity: 1 });
-    console.log("item handler");
+    // ctx.addItem({ ...list, quantity: 1 });
+    const obj = {
+      id: list.id,
+      title: list.title,
+      price: list.price,
+      img: list.imageUrl[0],
+      quantity: 1,
+    };
+    ctx.addItem(obj);
+    // console.log("item handler", obj);
   };
 
   return (
@@ -57,6 +66,9 @@ const FirstItem = (props) => {
             className={classes.addbtn}
           ></Button>
         </div>
+      </div>
+      <div>
+        <ProductReview></ProductReview>
       </div>
     </div>
   );
