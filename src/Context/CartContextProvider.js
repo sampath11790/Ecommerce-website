@@ -13,20 +13,37 @@ const CartContextProvider = (props) => {
   const [items, setItem] = useState([]);
   const [islogin, setislogin] = useState(TokenInitalstate);
   const userIsLoggedIn = islogin;
-  const addItemHandler = (item) => {
-    console.log(" am additemHandler");
-    let flag = false;
-    let updatedItem = items.map((each) => {
-      if (item.id === each.id) {
-        let temp = each.quantity + 1;
-        each.quantity = temp;
-        flag = true;
-      }
+  const addItemHandler = async (item) => {
+    try {
+      console.log(" am additemHandler");
+      let flag = false;
+      let updatedItem = items.map((each) => {
+        if (item.id === each.id) {
+          let temp = each.quantity + 1;
+          each.quantity = temp;
+          flag = true;
+        }
 
-      //console.log(item)
-      return each;
-    });
-    flag ? setItem([...updatedItem]) : setItem([...items, item]);
+        //console.log(item)
+        return each;
+      });
+      flag ? setItem([...updatedItem]) : setItem([...items, item]);
+
+      const response = await fetch(
+        `https://crudcrud.com/api/494970bb542e414fa91aa31c281dc88d/sampathgmailcom`,
+        {
+          method: "POST",
+          body: JSON.stringify(item),
+          headers: {
+            "Content-type": "application/json",
+          },
+        }
+      );
+      const data = await response.JSON();
+      console.log(data);
+    } catch (error) {
+      console.log("hi");
+    }
   };
   const loginHandler = (token) => {
     setislogin(token);
@@ -49,6 +66,21 @@ const CartContextProvider = (props) => {
     setItem([...updatedItem]);
     //console.log("RemoveItemHandler", id);
   };
+  const CrudDataHandler = (data) => {
+    const result = data.reduce((finalArry, currentItem) => {
+      const obj = finalArry.find((item) => item.id === currentItem.id);
+
+      if (obj) {
+        obj.quantity += currentItem.quantity;
+      } else {
+        finalArry.push(currentItem);
+      }
+      //console.log(finalArry)
+      return finalArry;
+    }, []);
+    setItem([...result]);
+    //console.log(data);
+  };
 
   // useEffect(() => {
   //   const x = localStorage.getItem("token");
@@ -66,6 +98,7 @@ const CartContextProvider = (props) => {
         loginState: userIsLoggedIn,
         login: loginHandler,
         logout: logoutHandler,
+        addCrudData: CrudDataHandler,
       }}
     >
       {props.children}

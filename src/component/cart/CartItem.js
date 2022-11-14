@@ -1,10 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Button from "../../UI/Button/Button";
 import classes from "./CartItem.module.css";
 import CartContext from "../../Context/CartContext";
 
 const CartItem = (props) => {
   const ctx = useContext(CartContext);
+  useEffect(() => {
+    console.log("outside");
+    const FetchFunction = async () => {
+      try {
+        console.log("insdie");
+        const response = await fetch(
+          "https://crudcrud.com/api/494970bb542e414fa91aa31c281dc88d/sampathgmailcom"
+        );
+        const x = await response.json();
+        // for (var i = 0; i < x.length; i++) {
+        //   ctx.addItem(x[i]);
+        // }
+        ctx.addCrudData([...x]);
+        console.log([...x]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    FetchFunction();
+  }, []);
 
   const removeHandler = (event) => {
     ctx.RemoveItem(event.target.id);

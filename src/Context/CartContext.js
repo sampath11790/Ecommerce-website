@@ -9,6 +9,7 @@ const CartContext = createContext({
   loginState: null,
   login: () => {},
   logout: () => {},
+  addCrudData: () => {},
 });
 
 export default CartContext;

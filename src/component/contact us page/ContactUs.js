@@ -22,7 +22,6 @@ const ContactUs = (props) => {
     });
     console.log(obj);
     console.log("contact us page Handler");
-    nameref = null;
   };
   return (
     <div className={classes.container}>
