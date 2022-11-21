@@ -1,17 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, Suspense } from "react";
 import { Route, Redirect } from "react-router-dom";
-import Header from "./component/Header/Header";
 import ProductList from "./component/ListItem/ProductList";
-import Footer from "./component/Footer/Footer";
 import Cart from "./component/cart/Cart";
-// import Card from "./UI/Card/Card";
-import AboutPage from "../src/AboutPage/AboutPage";
-
-import HomePage from "./component/Home/HomePage";
-import ContactUs from "./component/contact us page/ContactUs";
 import FirstItem from "./component/ListItem/firstItem/FirstItem";
-import LoginPage from "./component/LoginPage/LoginPage";
 import CartContext from "./Context/CartContext";
+const Header = React.lazy(() => import("./component/Header/Header"));
+const Footer = React.lazy(() => import("./component/Footer/Footer"));
+const HomePage = React.lazy(() => import("./component/Home/HomePage"));
+const ContactUs = React.lazy(() =>
+  import("./component/contact us page/ContactUs")
+);
+const LoginPage = React.lazy(() => import("./component/LoginPage/LoginPage"));
+const AboutPage = React.lazy(() => import("../src/AboutPage/AboutPage"));
 const productsArr = [
   {
     id: 1,
@@ -71,39 +71,41 @@ function App() {
 
   return (
     <React.Fragment>
-      <Header cartHandler={CartHandler}></Header>
-      {/* login condition added */}
-      {!ctx.loginState ? (
-        <Route path="/login">
-          <LoginPage></LoginPage>
-        </Route>
-      ) : (
-        <div>
-          <Route path="/About">
-            <AboutPage></AboutPage>
-          </Route>
-          <Route path="/Store" exact>
-            <ProductList items={productsArr}></ProductList>
-          </Route>
-          <Route path="/Store/:id">
-            <FirstItem items={productsArr}></FirstItem>
-          </Route>
-          {/* <HomePage></HomePage> */}
-          <Route path="/Home">
-            <HomePage></HomePage>
-          </Route>
+      <Suspense fallback={<p className="loading">Loading .....</p>}>
+        <Header cartHandler={CartHandler}></Header>
+        {/* login condition added */}
+        {!ctx.loginState ? (
           <Route path="/login">
             <LoginPage></LoginPage>
           </Route>
-          <Route path="/contactus">
-            <ContactUs></ContactUs>
-          </Route>
-        </div>
-      )}
-      {/* {Redirect path mentioned} */}
-      <Route path="*">{!ctx.loginState && <Redirect to="/login" />}</Route>
-      {ctx.loginState && <Footer></Footer>}
-      {cartState && <Cart items={productsArr}></Cart>}
+        ) : (
+          <div>
+            <Route path="/About">
+              <AboutPage></AboutPage>
+            </Route>
+            <Route path="/Store" exact>
+              <ProductList items={productsArr}></ProductList>
+            </Route>
+            <Route path="/Store/:id">
+              <FirstItem items={productsArr}></FirstItem>
+            </Route>
+            {/* <HomePage></HomePage> */}
+            <Route path="/Home">
+              <HomePage></HomePage>
+            </Route>
+            <Route path="/login">
+              <LoginPage></LoginPage>
+            </Route>
+            <Route path="/contactus">
+              <ContactUs></ContactUs>
+            </Route>
+          </div>
+        )}
+        {/* {Redirect path mentioned} */}
+        <Route path="*">{!ctx.loginState && <Redirect to="/login" />}</Route>
+        {ctx.loginState && <Footer></Footer>}
+        {cartState && <Cart items={productsArr}></Cart>}
+      </Suspense>
     </React.Fragment>
   );
 }
