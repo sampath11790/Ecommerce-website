@@ -16,11 +16,13 @@ const Header = (props) => {
   });
   const cartHandler = () => {
     props.cartHandler();
+    ctx.toggle();
     console.log("cart handler ");
   };
+
   return (
     <div>
-      <header className={classes.header}>
+      <header className={ctx.toggleval ? classes.header : classes.headertogl}>
         <span>Ecommerce website</span>
         {ctx.loginState && (
           <NavLink to="/Home">

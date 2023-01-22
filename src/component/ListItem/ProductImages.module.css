@@ -31,3 +31,19 @@
   width: 90%;
   border-radius: 10px;
 }
+@media screen and (max-width: 700px) {
+  .big-images {
+    width: 90%;
+  }
+  .big-images img {
+    height: 97%;
+    width: 90%;
+    border-radius: 10px;
+  }
+  .thumb-images {
+    width: 50%;
+  }
+  .container {
+    width: auto;
+  }
+}

@@ -10,3 +10,10 @@
 .image {
   width: 100%;
 }
+@media screen and (width-max: 700) {
+  .li {
+    background-color: rgb(200, 215, 227);
+    border-radius: 4px;
+    width: 100%;
+  }
+}

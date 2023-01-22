@@ -10,6 +10,8 @@ const CartContext = createContext({
   login: () => {},
   logout: () => {},
   addCrudData: () => {},
+  toggle: () => {},
+  toggleval: "",
 });
 
 export default CartContext;

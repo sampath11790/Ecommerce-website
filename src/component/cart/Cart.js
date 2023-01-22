@@ -6,7 +6,10 @@ import CartList from "./CartList";
 const Cart = (props) => {
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(<CartList />, document.getElementById("cart"))}
+      {ReactDOM.createPortal(
+        <CartList cartHandler={props.cartHandler} />,
+        document.getElementById("cart")
+      )}
       {/* {ReactDOM.createPortal(<div className={classes.overlay}></div>,document.getElementById('overlay'))} */}
     </React.Fragment>
   );

@@ -66,3 +66,37 @@ button {
   padding: 5px;
   display: flex;
 }
+
+@media screen and (max-width: 700px) {
+  .container {
+    padding: 5%;
+  }
+  .containermain {
+    flex-direction: column;
+    width: 100%;
+  }
+  .box1 {
+    flex: 2;
+    width: 100%;
+    /* background-color: aquamarine; */
+  }
+  .box2 {
+    padding: 5%;
+    border-radius: 10px;
+    width: 100%;
+    flex: 1.5;
+    background-color: rgb(255, 255, 255);
+    /* width: 50%; */
+  }
+  .sizeli li {
+    text-align: center;
+    width: auto;
+    list-style: none;
+    margin: 5px;
+    padding: 10px;
+    background-color: rgb(255, 252, 252);
+    color: rgb(21, 1, 1);
+    font-weight: bold;
+    border: 1px solid grey;
+  }
+}

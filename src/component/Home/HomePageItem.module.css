@@ -10,3 +10,13 @@
 .bookbtn {
   background-color: rgb(6, 6, 63);
 }
+@media screen and (max-width: 700px) {
+  .li {
+    border-bottom: solid 0.5px rgb(92, 2, 2);
+    flex-direction: column;
+
+    display: flex;
+    padding: 0rem;
+    list-style: none;
+  }
+}

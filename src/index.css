@@ -11,6 +11,7 @@ html {
 body {
   margin: 0;
   background-color: #ffffff;
+  width: 100%;
 }
 .loading {
   position: fixed;
@@ -20,4 +21,31 @@ body {
   height: 100%;
   z-index: 20;
   background-color: rgba(242, 238, 238, 0.75);
+}
+.menubtn img {
+  width: 10%;
+  position: absolute;
+  border-radius: 90%;
+  left: 73%;
+}
+.menubtn {
+  display: none;
+}
+@media screen and (max-width: 700px) {
+  .menubtn {
+    display: block;
+  }
+  .menubtn img {
+    position: absolute;
+    border-radius: 90%;
+    left: 87%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .menubtn img {
+    width: 17%;
+    position: absolute;
+    border-radius: 90%;
+    left: 83%;
+  }
 }

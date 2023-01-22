@@ -11,6 +11,7 @@ const obj = [
 const CartContextProvider = (props) => {
   const TokenInitalstate = localStorage.getItem("token");
   const [items, setItem] = useState([]);
+  const [toggleval, settoogleval] = useState(false);
   const [islogin, setislogin] = useState(TokenInitalstate);
   const userIsLoggedIn = islogin;
   const addItemHandler = async (item) => {
@@ -87,6 +88,9 @@ const CartContextProvider = (props) => {
   //   x ? setislogin(true) : console.log(x);
   // }, [islogin]);
   // // console.log(items)
+  const togglefun = () => {
+    settoogleval(!toggleval);
+  };
   return (
     <CartContext.Provider
       value={{
@@ -99,6 +103,8 @@ const CartContextProvider = (props) => {
         login: loginHandler,
         logout: logoutHandler,
         addCrudData: CrudDataHandler,
+        toggle: togglefun,
+        toggleval: toggleval,
       }}
     >
       {props.children}

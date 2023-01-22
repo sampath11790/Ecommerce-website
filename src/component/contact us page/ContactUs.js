@@ -24,12 +24,12 @@ const ContactUs = (props) => {
     console.log("contact us page Handler");
   };
   return (
-    <div className={classes.container}>
-      <div className={classes.container2}>
+    <div className={classes.container4}>
+      <div className={classes.container5}>
         <h1>Get In Touch</h1>
         <p>we are here for you! How can we help?</p>
 
-        <form className={classes.form} onSubmit={onFormHandler}>
+        <form className={classes.formss} onSubmit={onFormHandler}>
           <input
             ref={nameref}
             id="name"

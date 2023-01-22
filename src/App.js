@@ -63,7 +63,9 @@ const productsArr = [
 function App() {
   const [cartState, setcartState] = useState(false);
   const ctx = useContext(CartContext);
-
+  const tooglebtn = () => {
+    ctx.toggle();
+  };
   const CartHandler = () => {
     console.log("state Handler");
     setcartState(!cartState);
@@ -73,7 +75,14 @@ function App() {
     <React.Fragment>
       <Suspense fallback={<p className="loading">Loading .....</p>}>
         <Header cartHandler={CartHandler}></Header>
+        <div className="menubtn" onClick={tooglebtn}>
+          <img
+            src="https://www.pngkey.com/png/detail/200-2004537_menu-button-clip-art-positive-clip-art.png"
+            alt="Menu Button Clip Art - Positive Clip Art@pngkey.com"
+          />
+        </div>
         {/* login condition added */}
+
         {!ctx.loginState ? (
           <Route path="/login">
             <LoginPage></LoginPage>
@@ -104,7 +113,9 @@ function App() {
         {/* {Redirect path mentioned} */}
         <Route path="*">{!ctx.loginState && <Redirect to="/login" />}</Route>
         {ctx.loginState && <Footer></Footer>}
-        {cartState && <Cart items={productsArr}></Cart>}
+        {cartState && (
+          <Cart items={productsArr} cartHandler={CartHandler}></Cart>
+        )}
       </Suspense>
     </React.Fragment>
   );

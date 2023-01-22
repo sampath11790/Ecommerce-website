@@ -11,10 +11,16 @@ const CartList = (props) => {
   ctx.items.map((item) => {
     totalamount += item.price * item.quantity;
   });
-
+  const cartclose = () => {
+    props.cartHandler();
+    console.log("hi");
+  };
   return (
     <div className={classes.container}>
       <ul className={classes.ui}>
+        <h2 className={classes.closebtn} onClick={cartclose}>
+          X
+        </h2>
         <div className={classes.spantd}>
           <h3>Item</h3>
           <h3>Qty</h3>
@@ -24,7 +30,9 @@ const CartList = (props) => {
         <CartItem />
         <h1> Total Amount</h1>
         <h1>{totalamount}</h1>
-        <Button name="Purchase" className={classes.purchbtn}></Button>
+        <div className={classes.twobuttons}>
+          <Button name="Purchase" className={classes.purchbtn}></Button>
+        </div>
       </ul>
     </div>
   );

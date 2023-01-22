@@ -10,7 +10,7 @@
   top: 0%;
   height: 8%;
   z-index: 10%;
-  width: 100%;
+  width: 100vw;
 }
 .cartbtn {
   background-color: rgb(216, 134, 11);
@@ -69,4 +69,98 @@
   text-align: center;
   font-size: x-large;
   border-radius: 5px;
+}
+.headertogl {
+  position: fixed;
+  height: 7rem;
+  background-color: #8a2b06;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+  top: 0%;
+  height: 8%;
+  z-index: 10%;
+  width: 100vw;
+}
+.headertogl span {
+  color: aliceblue;
+}
+@media screen and (max-width: 700px) {
+  .header {
+    position: absolute;
+
+    /* left: -100%; */
+
+    justify-content: space-between;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgb(203, 228, 221) 100%,
+      rgba(241, 224, 230, 0.71) 60%
+    );
+    color: #020c1b;
+    z-index: 10;
+  }
+
+  .login {
+    background-color: aliceblue;
+    font-size: 10px;
+  }
+
+  .amt {
+    /* background-color: rgb(30, 144, 244); */
+    padding: 10px;
+    height: 100%;
+    border-radius: 5px;
+    display: inline;
+  }
+  .header a {
+    font-size: large;
+    font-weight: bolder;
+    color: rgb(49, 44, 44);
+    text-decoration: none;
+  }
+  .logout {
+    background-color: #181064;
+    color: aliceblue;
+  }
+  .header a:hover,
+  .header a:active,
+  .header a.active {
+    color: #135013;
+  }
+  .cartbtn {
+    background-color: rgb(66, 9, 83);
+  }
+  .btn {
+    display: flex;
+    flex-direction: column-reverse;
+
+    align-items: center;
+  }
+  .btn h2 {
+    color: #070500;
+  }
+  .headertogl {
+    left: -100%;
+    position: absolute;
+
+    /* left: -100%; */
+
+    justify-content: space-between;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgb(203, 228, 221) 100%,
+      rgba(241, 224, 230, 0.71) 60%
+    );
+    color: #020c1b;
+    z-index: 10;
+  }
 }
